@@ -1,0 +1,56 @@
+# ──────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+MANIFEST
+
+# ──────────────────────────────────────────────
+# Entornos virtuales
+# ──────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# ──────────────────────────────────────────────
+# Datos sensibles y archivos generados en runtime
+# ──────────────────────────────────────────────
+
+# Toda la carpeta de salida del bot (sesiones, resultados, documentos)
+dist/
+
+# ──────────────────────────────────────────────
+# IDEs y editores
+# ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ──────────────────────────────────────────────
+# Playwright
+# ──────────────────────────────────────────────
+playwright-report/
+test-results/
+
+# ──────────────────────────────────────────────
+# Logs y temporales
+# ──────────────────────────────────────────────
+*.log
+*.tmp
+*.bak

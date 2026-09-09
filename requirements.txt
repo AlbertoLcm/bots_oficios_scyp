@@ -1,0 +1,14 @@
+# ──────────────────────────────────────────────
+# Bot Wizard — Dependencias del proyecto
+# ──────────────────────────────────────────────
+
+# Interfaz gráfica
+customtkinter>=5.2.2
+Pillow>=10.3.0
+
+# RPA / Automatización de navegador
+playwright>=1.44.0
+
+# Manejo de datos y archivos Excel
+pandas>=2.2.0
+openpyxl>=3.1.2       # requerido por pandas para leer/escribir .xlsx
