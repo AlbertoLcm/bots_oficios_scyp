@@ -417,9 +417,7 @@ async def sugo_cierre_operaciones_asig_juridico(
 
         try:
             filtro_url = lambda p: "image-viewer.jsp" in p.url
-            async with page.context.expect_page(
-                predicate=filtro_url, timeout=5000
-            ) as new_page_visor:
+            async with page.context.expect_page(predicate=filtro_url, timeout=5000) as new_page_visor:
                 await page.locator("#btnAdjJuriC1").click()
 
             page_visor = await new_page_visor.value
@@ -834,8 +832,6 @@ async def orchestrator(
 
                             # PROCESO SUGO INFORME
                             if status_sugo != "ok":
-                                await asyncio.sleep(2)
-
                                 df.at[idx, "Estatus Informe"] = "Procesando"
                                 if status_callback:
                                     status_callback(idx, "Procesando")
