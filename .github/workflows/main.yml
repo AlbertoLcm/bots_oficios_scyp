@@ -52,7 +52,7 @@ jobs:
     - name: Guardar el entregable como Artefacto (Windows)
       uses: actions/upload-artifact@v4
       with:
-        name: wizard-finalizacion-folios-windows
+        name: bots-oficios-scyp-windows
         path: entregable/
 
   # ==========================================
@@ -97,5 +97,5 @@ jobs:
     - name: Guardar el entregable como Artefacto (Mac)
       uses: actions/upload-artifact@v4
       with:
-        name: wizard-finalizacion-folios-mac
+        name: bots-oficios-scyp-mac
         path: entregable/

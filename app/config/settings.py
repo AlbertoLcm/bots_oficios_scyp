@@ -8,10 +8,22 @@ from pathlib import Path
 IS_FROZEN = getattr(sys, 'frozen', False) # Detecta si es ejecutable Exe o Desarrollo
 
 if IS_FROZEN:
-    BASE_DIR = Path(sys.executable).parent
-    
+    # INTERNAL_DIR es para los archivos empaquetados con --add-data (como app/assets)
+    # Esto funciona igual en Windows y Mac, no hay que cambiarlo.
     INTERNAL_DIR = Path(sys._MEIPASS)
+    
+    # BASE_DIR es para buscar archivos externos (Oficios.xlsx, usuario_sugo.json)
+    exe_path = Path(sys.executable)
+    
+    if sys.platform == "darwin" and "Contents/MacOS" in str(exe_path):
+        # En Mac (.app), subimos niveles: MacOS -> Contents -> main.app -> Carpeta entregable
+        BASE_DIR = exe_path.parent.parent.parent.parent
+    else:
+        # En Windows (.exe), el padre directo es la carpeta entregable
+        BASE_DIR = exe_path.parent
+
 else:
+    # Entorno de desarrollo
     BASE_DIR = Path(__file__).resolve().parent.parent.parent
     INTERNAL_DIR = BASE_DIR
 
