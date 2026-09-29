@@ -29,7 +29,7 @@ else:
 
 DIST_DIR = BASE_DIR / "dist"
 INPUT_FILE = BASE_DIR / "Oficios.xlsx"
-ARCHIVO_CREDENCIALES = "usuario_sugo.json" 
+ARCHIVO_CREDENCIALES = BASE_DIR / "usuario_sugo.json" 
 USER_DATA_DIR = DIST_DIR / "perfil_google_drive"
 ASSETS_DIR = INTERNAL_DIR / "app" / "assets"
 TEMP_FILE = DIST_DIR / "resultados_temp.csv"
